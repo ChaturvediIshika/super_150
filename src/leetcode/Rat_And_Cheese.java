@@ -3,6 +3,7 @@ package leetcode;
 import java.util.Scanner;
 
 public class Rat_And_Cheese {
+    static boolean f=false;
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         int m= sc.nextInt();
@@ -22,21 +23,27 @@ public class Rat_And_Cheese {
     }
     public static void Rat(char arr[][],int q[][],int i,int j,int m,int n)
     {
+        if(f==true)
+        {
+            return;
+        }
         if(i<0 || i>=m || j<0 || j>=n || arr[i][j]=='X')
         {
             return;
         }
-        if(i==m-1 && j==n-1)
+        if(i==m-1 && j==n-1 && arr[i][j]!='X')
         {
+            f=true;
             q[i][j]=1;
             display(q);
             return;
         }
         arr[i][j]='X';
         q[i][j]=1;
+        Rat(arr,q,i,j+1,m,n);
         Rat(arr,q,i+1,j,m,n);
         Rat(arr,q,i-1,j,m,n);
-        Rat(arr,q,i,j+1,m,n);
+
         Rat(arr,q,i,j-1,m,n);
         arr[i][j]='O';
         q[i][j]=0;
@@ -49,5 +56,6 @@ public class Rat_And_Cheese {
             }
             System.out.println();
         }
+        System.out.println();
     }
 }

@@ -29,11 +29,11 @@ public class N_Queen {
         {
             for (int j=0;j<board[0].length;j++)
             {
-                System.out.print(board[i][j]);
+                if(board[i][j]==true)
+                System.out.print("{"+(i+1)+"-"+(j+1)+"} ");
             }
-            System.out.println();
         }
-        System.out.println();
+        System.out.print(" ");
     }
     public static boolean issafe(boolean[][] board,int row,int col)
     {
