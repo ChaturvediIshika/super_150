@@ -1,5 +1,7 @@
 package LinkedList;
 
+import java.util.Stack;
+
 public class listlinked {
     private class Node{
         int val;
@@ -82,7 +84,27 @@ public class listlinked {
         }
     }
 
-//    public Node reverseKGroup(Node head, int k) {
-//
-//    }
+    public Node reverseKGroup(Node head, int k) {
+        Stack<Node> st=new Stack<>();
+        Node dummy=new Node();
+        Node temp=dummy;
+        Node start=null;
+        while(head!=null){
+            if (st.size()==0)
+                start=head;
+            st.push(head);
+            if(st.size()==k){
+                while (!st.isEmpty()){
+                    Node nn=new Node();
+                    nn.val=st.pop().val;
+                    dummy.next=nn;
+                    dummy=dummy.next;
+                }
+            }
+            head=head.next;
+        }
+        if(st.size()>0)
+            dummy.next=start;
+        return temp.next;
+    }
 }
