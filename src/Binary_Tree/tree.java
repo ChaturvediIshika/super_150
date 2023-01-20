@@ -1,5 +1,7 @@
 package Binary_Tree;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
 
 public class tree {
@@ -112,5 +114,68 @@ public class tree {
         int l=height(node.left)+1;
         int r=height(node.right)+1;
         return Math.max(l,r);
+    }
+    public boolean Sum(Node root, int targetSum,int sum) {
+        if(root==null)
+            return false;
+        if (root.left==null && root.right==null && sum+root.val==targetSum)
+            return true;
+        boolean l=Sum(root.left,targetSum,sum+root.val);
+        boolean r=Sum(root.right,targetSum,sum+root.val);
+        return l||r;
+    }
+    public void level_order_traversal(){
+        level_order_traversal(root);
+    }
+    public void level_order_traversal(Node root){
+        Queue<Node> queue=new LinkedList<>();
+        Queue<Node> q1=new LinkedList<>();
+        if (root==null)
+            return;
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            Node rv = queue.remove();
+            System.out.print(rv.val+" ");
+            if (rv.left != null)
+                q1.add(rv.left);
+            if (rv.right != null)
+                q1.add(rv.right);
+            if (queue.isEmpty()) {
+                System.out.println();
+                queue = q1;
+                q1=new LinkedList<>();
+            }
+        }
+    }
+    public int subNumbers(){
+        return Sum(root,0);
+    }
+    public int Sum(Node root,int ans){
+        if (root==null)
+            return 0;
+        if(root.left==null && root.right==null){
+            return ans*10+root.val;
+        }
+        int left=Sum(root.left,ans*10+root.val);
+        int right=Sum(root.right,ans*10+root.val);
+        return left+right;
+    }
+    public int lca(){
+        return lowestCommonAncestor(root,root.left.right,root.right.left).val;
+    }
+    public Node lowestCommonAncestor(Node root,Node p,Node q){
+        if (root==null)
+            return root;
+        if(root==p || root==q){
+            return root;
+        }
+        Node left=lowestCommonAncestor(root.left,p,q);
+        Node right=lowestCommonAncestor(root.right,p,q);
+        if(left!=null && right!=null)
+            return root;
+        else if (left!=null)
+            return left;
+        else
+            return right;
     }
 }

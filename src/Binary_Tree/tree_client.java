@@ -11,5 +11,6 @@ public class tree_client {
         System.out.println(bt.Search(8));
         System.out.println(bt.Maximum());
         System.out.println(bt.height());
+        bt.level_order_traversal();
     }
 }
