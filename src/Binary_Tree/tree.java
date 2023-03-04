@@ -1,8 +1,6 @@
 package Binary_Tree;
 
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Scanner;
+import java.util.*;
 
 public class tree {
     private class Node{
@@ -177,5 +175,41 @@ public class tree {
             return left;
         else
             return right;
+    }
+    public void zigzag(){
+        zigzag_level_order(root,0);
+    }
+    public void zigzag_level_order(Node root,int c){
+        Deque<Node> dq1=new ArrayDeque<>();
+        Deque<Node> dq2=new ArrayDeque<>();
+        Stack<Integer> st=new Stack<>();
+        if(root==null)
+            return;
+        dq1.add(root);
+        System.out.print(root.val+" ");
+        while (!dq1.isEmpty()){
+            Node rq=dq1.remove();
+            if (rq.left!=null)
+                dq2.add(rq.left);
+            if (rq.right!=null)
+                dq2.add(rq.right);
+            if (dq1.isEmpty()){
+                if(c%2==0){
+                    for(Node q:dq2){
+                        st.push(q.val);
+                    }
+                    while (!st.isEmpty())
+                        System.out.print(st.pop()+" ");
+                }
+                else{
+                    for(Node q:dq2){
+                        System.out.print(q.val+" ");;
+                    }
+                }
+                dq1=dq2;
+                dq2=new ArrayDeque<>();
+                c++;
+            }
+        }
     }
 }

@@ -2,7 +2,7 @@ package Backtracking;
 
 public class N_Queen {
     public static void main(String[] args) {
-        int n=4;
+        int n=8;
         boolean[][] board=new boolean[n][n];
         Queen(board,n,0);
     }
@@ -33,7 +33,7 @@ public class N_Queen {
                 System.out.print("{"+(i+1)+"-"+(j+1)+"} ");
             }
         }
-        System.out.print(" ");
+        System.out.println();
     }
     public static boolean issafe(boolean[][] board,int row,int col)
     {

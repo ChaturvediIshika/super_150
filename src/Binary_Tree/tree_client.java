@@ -8,9 +8,10 @@ public class tree_client {
 //        bt.preorder();
         bt.inorder();
 //        bt.postorder();
-        System.out.println(bt.Search(8));
-        System.out.println(bt.Maximum());
-        System.out.println(bt.height());
-        bt.level_order_traversal();
+//        System.out.println(bt.Search(8));
+//        System.out.println(bt.Maximum());
+//        System.out.println(bt.height());
+//        bt.level_order_traversal();
+        bt.zigzag();
     }
 }

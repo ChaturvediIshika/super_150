@@ -4,16 +4,15 @@ import java.util.Scanner;
 
 public class abc {
     public static void main(String[] args) {
-        Queue<Integer> q=new LinkedList<>();
-        try {
-            Float f = new Float("3.0");
-            int x = f.intValue();
-            byte b = f.byteValue();
-            double d = f.doubleValue();
-            System.out.println(x + b + d);
-        } catch (NumberFormatException exception) {
-            System.out.println("ahhhh");
-        }
+        int a[]={1,2,3,4};
+        print(a);
+        for (int i:a)
+            System.out.println(i);
+    }
+    public static void print(int a[]){
+        a[2]=7;
+        for (int i:a)
+            System.out.println(i);
     }
 
 }

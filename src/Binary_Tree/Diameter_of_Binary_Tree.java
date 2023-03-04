@@ -32,5 +32,22 @@ public class Diameter_of_Binary_Tree {
             sdp.ht=Math.max(ldp.ht,rdp.ht)+1;
             return sdp;
         }
+        public BalancedPair isBalanced(TreeNode node){
+            if (node==null)
+                return new BalancedPair();
+            BalancedPair lbd=isBalanced(node.left);
+            BalancedPair rbd=isBalanced(node.right);
+            BalancedPair sbd=new BalancedPair();
+            if(Math.abs(lbd.height-rbd.height)<=1)
+                sbd.isBalanced=true;
+            else
+                sbd.isBalanced=false;
+            sbd.height=Math.max(lbd.height, rbd.height);
+            return sbd;
+        }
+    }
+    private class BalancedPair {
+        int height;
+        boolean isBalanced;
     }
 }

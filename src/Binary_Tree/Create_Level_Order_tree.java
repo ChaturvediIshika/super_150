@@ -62,4 +62,15 @@ public class Create_Level_Order_tree {
         display(node.left);
         display(node.right);
     }
+    public void print(){
+        print(root);
+    }
+    public void print(Node node){
+        if(node==null)
+            return;
+        if(node.left==null && node.right==null)
+            System.out.print(node.val+" ");
+        print(node.left);
+        print(node.right);
+    }
 }
