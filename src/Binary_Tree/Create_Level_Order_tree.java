@@ -1,8 +1,6 @@
 package Binary_Tree;
 
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Scanner;
+import java.util.*;
 
 public class Create_Level_Order_tree {
     private class Node{
@@ -72,5 +70,32 @@ public class Create_Level_Order_tree {
             System.out.print(node.val+" ");
         print(node.left);
         print(node.right);
+    }
+    public void topview()
+    {
+        verticalTraversalTop(this.root);
+        // System.out.print("fshjavl ");
+    }
+
+    private void verticalTraversalTop(Node root) {
+        TreeMap<Integer,ArrayList<Integer>> map=new TreeMap<Integer,ArrayList<Integer>>();
+        ArrayList<Integer> lls=new ArrayList<Integer>();
+        traverse(root,map,0,lls);
+        for(int i:map.keySet()){
+            for(int j:map.get(i)){
+                lls.add(j);
+            }
+        }
+        for(int i:lls)
+            System.out.print(i+" ");
+    }
+    private void traverse(Node root,TreeMap<Integer,ArrayList<Integer>> map,int p,ArrayList<Integer> lls){
+        if(root==null || root.val==-1)
+            return;
+        ArrayList<Integer> ls=map.getOrDefault(p,new ArrayList<Integer>());
+        ls.add(root.val);
+        map.put(p,ls);
+        traverse(root.left,map,p-1,lls);
+        traverse(root.right,map,p+1,lls);
     }
 }
