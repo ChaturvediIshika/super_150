@@ -20,14 +20,7 @@ public class Team {
                 cnt++;
             if(cnt>=2)
                 ans++;
-//            if(a==1)
-//                cnt++;
-//            if (b==1)
-//                cnt++;
-//            if (c==1)
-//                cnt++;
-//            if(cnt>=2)
-//                ans++;
+
         }
         System.out.println(ans);
     }
