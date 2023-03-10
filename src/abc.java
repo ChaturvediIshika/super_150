@@ -3,16 +3,8 @@ import java.util.Queue;
 import java.util.Scanner;
 
 public class abc {
-    public static void main(String[] args) {
-        int a[]={1,2,3,4};
-        print(a);
-        for (int i:a)
-            System.out.println(i);
+    static public void main(String[] args) {
+        String s[]=new String[2];
+        System.out.println(s[1]);
     }
-    public static void print(int a[]){
-        a[2]=7;
-        for (int i:a)
-            System.out.println(i);
-    }
-
 }
