@@ -21,6 +21,11 @@ public class graph_Store_Client {
 //        gs.vertexRemove(4);
 //        System.out.println();
 //        gs.display();
-        System.out.println(gs.hasPath(1,6, new HashSet<Integer>()));
+//        System.out.println(gs.hasPath(1,6, new HashSet<Integer>()));
+//        gs.allPath(1,6,new HashSet<>(),"");
+//        System.out.println(gs.BFS(1,6));
+//        System.out.println(gs.DFS(1,6));
+        gs.BFT();
+        gs.DFT();
     }
 }
