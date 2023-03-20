@@ -15,16 +15,16 @@ public class Odd_Queries {
             long l[]=new long[n+1];
             l[0]=0;
             long r[]=new long[n+1];
-            r[n-1]=0;
-            for (int i=1;i<n;i++)
+            r[n]=0;
+            for (int i=1;i<=n;i++)
                 l[i]=l[i-1]+a[i-1];
-            for (int i=n-1;i>0;i--)
+            for (int i=n-1;i>=0;i--)
                 r[i]=r[i+1]+a[i];
             while (q-->0){
                 int u=sc.nextInt()-1;
                 int h=sc.nextInt();
                 int k=sc.nextInt();
-                long sum=0L+l[u]+r[h]+(1L*k*(h-u));
+                long sum=0L+l[u]+r[h]+(h-u)*1L*k;
 //                System.out.println(l[u]+" "+r[h]+" "+sum);
                 if(sum%2!=0)
                     System.out.println("YES");
