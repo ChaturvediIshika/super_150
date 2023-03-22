@@ -114,11 +114,16 @@ public class Graph_store {
                 continue;
             q.add(src);
             while (!q.isEmpty()) {
+                //remove
                 int rv = q.poll();
+                //ignore
                 if (visited.contains(rv))
                     continue;
+                //visited
                 visited.add(rv);
+                //self work
                 System.out.print(rv + " ");
+                //add neighbours
                 for (int nbrs : map.get(rv).keySet()) {
                     if (!visited.contains(nbrs))
                         q.add(nbrs);
