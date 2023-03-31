@@ -45,7 +45,7 @@ public class BellMan_Ford {
             for (EdgePair ep : ls) {
                 int e1 = ep.e1;
                 int e2 = ep.e2;
-                if(i==map.size() && dsu[e1]+ep.cost!=dsu[e2]){
+                if(i==map.size() && dsu[e1]+ep.cost<dsu[e2]){
                     System.out.println("Negative Cycle");
                     return;
                 }
