@@ -28,7 +28,7 @@ public class Graph_Bipartite {
                         }
                     }
                 }
-                return false;
+                return true;
         }
     }
     class Bipartite{
