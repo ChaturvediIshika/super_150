@@ -32,7 +32,7 @@ public class Dijkstra {
                     '}';
         }
     }
-    public void Cost(){
+    public void Cost(int n1,int n2){
         PriorityQueue<DijkstraPair> pq=new PriorityQueue<>(new Comparator<DijkstraPair>() {
             @Override
             public int compare(DijkstraPair o1, DijkstraPair o2) {
@@ -40,7 +40,11 @@ public class Dijkstra {
             }
         });
         Set<Integer> visited=new HashSet<>();
-        pq.add(new DijkstraPair(1,"1",0));
+        pq.add(new DijkstraPair(n1,n1+"",0));
+        int c=0;
+        char ch=(n2+"").charAt(0);
+//        System.out.println(ch);
+        outer:
         while (!pq.isEmpty()){
             DijkstraPair rp=pq.remove();
             if(visited.contains(rp.vtx)){
@@ -48,6 +52,10 @@ public class Dijkstra {
             }
             visited.add(rp.vtx);
             System.out.println(rp);
+//            if(rp.acp.charAt(rp.acp.length()-1)==ch) {
+//                c=rp.cost;
+//                break outer;
+//            }
             for (int nbrs:map.get(rp.vtx).keySet()){
                 if(!visited.contains(nbrs)){
                     int cost=rp.cost+map.get(rp.vtx).get(nbrs);
@@ -55,6 +63,7 @@ public class Dijkstra {
                 }
             }
         }
+//        System.out.println(c);
     }
     public static void main(String args[]){
         Dijkstra dj=new Dijkstra(7);
@@ -66,6 +75,6 @@ public class Dijkstra {
         dj.AddEdge(5,6,4);
         dj.AddEdge(7,5,3);
         dj.AddEdge(6,7,3);
-        dj.Cost();
+        dj.Cost(1,4);
     }
 }

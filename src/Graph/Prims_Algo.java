@@ -35,12 +35,14 @@ public class Prims_Algo {
         PriorityQueue<PrimsPair> pq=new PriorityQueue<>((a,b)->a.cost- b.cost);
         HashSet<Integer> visited=new HashSet<>();
         pq.add(new PrimsPair(1,1,0));
+        int c=0;
         while (!pq.isEmpty()){
             PrimsPair pp=pq.remove();
             if(visited.contains(pp.vtx))
                 continue;
             visited.add(pp.vtx);
             System.out.println(pp);
+
             ans+=pp.cost;
             for (int nbrs:map.get(pp.vtx).keySet()){
                 if(!visited.contains(nbrs))
