@@ -6,7 +6,7 @@ public class Quick_Sort {
         Sort(a,0,a.length-1);
         for (int i=0;i<a.length;i++)
         {
-            System.out.println(a[i]);
+            System.out.print(a[i]+" ");
         }
     }
     public static void Sort(int a[],int si,int ei)

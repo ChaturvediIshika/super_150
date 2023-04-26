@@ -5,7 +5,7 @@ public class bubble_sort {
         int a[]={5,4,3,2,1};
         sort(a);
         for (int i=0;i<a.length;i++)
-            System.out.println(a[i]);
+            System.out.print(a[i]+" ");
     }
     public static void sort(int a[]){
         for (int i=0;i<a.length;i++){
