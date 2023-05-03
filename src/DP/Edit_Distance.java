@@ -7,8 +7,8 @@ public class Edit_Distance {
         Scanner sc=new Scanner(System.in);
         String word1=sc.next();
         String word2=sc.next();
-//        System.out.println(edit(word1,word2,0,0));
-        System.out.println(edit2(word1,word2));
+        System.out.println(edit(word1,word2,0,0));
+//        System.out.println(edit2(word1,word2));
     }
     public static int edit(String word1,String word2,int i,int j){
         if(i==word1.length())
