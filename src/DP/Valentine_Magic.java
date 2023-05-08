@@ -16,15 +16,20 @@ public class Valentine_Magic {
             g[i]= sc.nextInt();
         Arrays.sort(b);
         Arrays.sort(g);
-        System.out.println(diff(b,g,0,0));
+        int dp[][]=new int[b.length][g.length];
+        for(int i[]:dp)
+            Arrays.fill(i,-1);
+        System.out.println(diff(b,g,0,0,dp));
     }
-    public static int diff(int b[],int g[],int i,int j){
+    public static int diff(int b[],int g[],int i,int j,int dp[][]){
         if(i==b.length)
             return 0;
         if(j==g.length)
             return 10000000;
-        int pair=Math.abs(b[i]-g[j])+diff(b,g,i+1,j+1);
-        int Nopair=diff(b,g,i,j+1);
-        return Math.min(pair,Nopair);
+        if(dp[i][j]!=-1)
+            return dp[i][j];
+        int pair=Math.abs(b[i]-g[j])+diff(b,g,i+1,j+1,dp);
+        int Nopair=diff(b,g,i,j+1,dp);
+        return dp[i][j]=Math.min(pair,Nopair);
     }
 }
