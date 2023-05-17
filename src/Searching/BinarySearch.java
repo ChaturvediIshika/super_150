@@ -1,4 +1,4 @@
-package Divide_Conquer;
+package Searching;
 
 public class BinarySearch {
     int binarySearch(int arr[], int x)

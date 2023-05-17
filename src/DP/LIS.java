@@ -20,7 +20,7 @@ public class LIS {
                 int l = 0, h = ls.size() - 1;
                 while (l <= h) {
                     int mid = (l + h) / 2;
-                    if (ls.get(mid) > n) {
+                    if (ls.get(mid) >=n) {
                         h = mid - 1;
                         k = mid;
                     } else

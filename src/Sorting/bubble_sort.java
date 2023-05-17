@@ -1,4 +1,4 @@
-package Divide_Conquer;
+package Sorting;
 
 public class bubble_sort {
     public static void main(String[] args) {

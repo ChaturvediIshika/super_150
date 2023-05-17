@@ -1,4 +1,4 @@
-package Divide_Conquer;
+package Sorting;
 
 import java.util.concurrent.CountedCompleter;
 

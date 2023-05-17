@@ -15,13 +15,13 @@ public class Buying_Fruits {
                     a[i][j] = sc.nextInt();
             }
             int max = Integer.MAX_VALUE;
-            for (int i = 0; i < 3; i++) {
-                int dp[][] = new int[m][3];
-                for (int d[] : dp)
-                    Arrays.fill(d, -1);
-                max = Math.min(max, fruit(a, 0, i, dp));
+            for (int i = 1; i < m; i++) {
+                a[i][0]+=Math.min(a[i-1][1],a[i-1][2]);
+                a[i][1]+=Math.min(a[i-1][0],a[i-1][2]);
+                a[i][2]+=Math.min(a[i-1][0],a[i-1][1]);
             }
-            System.out.println(max);
+            Arrays.sort(a[m-1]);
+            System.out.println(a[m-1][0]);
         }
     }
     public static int fruit(int a[][],int i,int j,int dp[][]){

@@ -1,4 +1,4 @@
-package Divide_Conquer;
+package Sorting;
 
 public class HeapSort {
     public void sort(int arr[])
