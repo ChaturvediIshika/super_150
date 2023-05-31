@@ -68,7 +68,7 @@ public class Graph_store {
         }
         visited.remove(src);
     }
-    public boolean BFS(int src,int des){
+    public boolean BFS(int src,int des){ //guarantees short path
         HashSet<Integer> visited=new HashSet<>();
         Queue<Integer> q=new LinkedList<>();
         q.add(src);
@@ -87,7 +87,7 @@ public class Graph_store {
         }
         return false;
     }
-    public boolean DFS(int src,int des){
+    public boolean DFS(int src,int des){ //does not guarantee short path
         HashSet<Integer> visited=new HashSet<>();
         Stack<Integer> q=new Stack<>();
         q.push(src);
