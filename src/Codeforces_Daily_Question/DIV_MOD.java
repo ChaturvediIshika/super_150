@@ -10,15 +10,10 @@ public class DIV_MOD {
             long l=sc.nextLong();
             long r=sc.nextLong();
             long a= sc.nextLong();
-            long sum=0;
-            if(r==l){
-                sum=(r/a)+(r%a);
-            }
-            else if(r%a==0){
-                sum=(r/a)+a-2;
-            }
-            else{
-                sum=(r/a)+(r%a);
+            long sum=r/a+r%a;
+            long m=(r/a*a)-1;
+            if(m>=l){
+                sum=Math.max(sum,(m/a)+(m%a));
             }
             System.out.println(sum);
         }
