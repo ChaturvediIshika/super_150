@@ -16,7 +16,7 @@ public class Recover_Binary_Search_Tree {
           this.right = right;
       }
   }
-  TreeNode prev,first,sec;
+  TreeNode prev=null,first=null,sec=null;
   public void recover(TreeNode root) {
         inorder(root);
         int temp=first.val;
@@ -31,7 +31,6 @@ public class Recover_Binary_Search_Tree {
       if(prev!=null && prev.val>root.val){
           if(first==null)
               first=prev;
-          else
               sec=root;
       }
       prev=root;
