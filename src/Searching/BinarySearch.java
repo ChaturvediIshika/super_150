@@ -4,7 +4,7 @@ public class BinarySearch {
     int binarySearch(int arr[], int x)
     {
         int l = 0, r = arr.length - 1;
-        while (l <= r) {
+        while (l <= r) {    //time Complexity O(log n)
             int m = l + (r - l) / 2;
             if (arr[m] == x)
                 return m;
@@ -15,7 +15,7 @@ public class BinarySearch {
         }
         return -1;
     }
-    public static void main(String args[])
+    public static void main(String args[]) //space Complexity O(1)
     {
         BinarySearch ob = new BinarySearch();
         int arr[] = { 2, 3, 4, 10, 40 };

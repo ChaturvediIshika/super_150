@@ -4,8 +4,8 @@ public class LinearSearch {
     public static int search(int arr[], int x)
     {
         int N = arr.length;
-        for (int i = 0; i < N; i++) {
-            if (arr[i] == x)
+        for (int i = 0; i < N; i++) {//time Complexity O(n)
+            if (arr[i] == x)//space complexity O(1)
                 return i;
         }
         return -1;
