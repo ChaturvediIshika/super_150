@@ -8,7 +8,7 @@ public class Merge_Sort {
         for(int i=0;i<a.length;i++)
             System.out.print(ans[i]+" ");
     }
-    public static int[] Sort(int a[],int l,int r){
+    public static int[] Sort(int a[],int l,int r){ //stable and outplace // time Complexity O(nlogn) //space Complexity O(n)
         if(l==r){
             int k[]=new int[1];
             k[0]=a[l];

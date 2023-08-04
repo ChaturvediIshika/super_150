@@ -10,7 +10,7 @@ public class Selection_Sort {
     public static void Sort(int a[]){
         for (int i=0;i<a.length-1;i++){//time Complexity O(n^2)
             int min=i;
-            for (int j=i+1;j<a.length;j++){//space Complexity O(1)
+            for (int j=i+1;j<a.length;j++){//space Complexity O(1) //unstable and inplace
                 if(a[j]<a[min])
                     min=j;
             }

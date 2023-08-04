@@ -8,7 +8,7 @@ public class Quick_Sort {
         for (int i=0;i<a.length;i++)
             System.out.print(a[i]+" ");
     }
-    public static void Sort(int a[],int l,int r){
+    public static void Sort(int a[],int l,int r){ //unstable and inplace
         if(l<r){
             int q=Partition(a,l,r);
             Sort(a,l,q);

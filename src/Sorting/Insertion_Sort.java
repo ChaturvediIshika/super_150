@@ -9,7 +9,7 @@ public class Insertion_Sort {
     }
     public static void Sort(int a[]){//best time Complexity O(n)
         int z=1;
-        for(int i=1;i<a.length;i++){//worst time complexity O(n^2)
+        for(int i=1;i<a.length;i++){//worst time complexity O(n^2) // stable and inplace //incremental approach
             int key=a[i];//space complexity O(1)
             int j=i-1;
             while (j>=0 && a[j]>key){
