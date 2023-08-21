@@ -24,6 +24,7 @@ public class Topological_Sort {
         return in;
     }
     public void topological(){
+        System.out.println(map);
         int in[]=degreeIn();
         Queue<Integer> q=new LinkedList<>();
         for(int i=1;i<in.length;i++){
@@ -57,7 +58,7 @@ public class Topological_Sort {
         ts.AddEdge(4,5,0);
         ts.AddEdge(4,6,0);
         ts.AddEdge(5,6,0);
-        ts.AddEdge(7,8,0);
+//        ts.AddEdge(7,8,0);
         ts.topological();
     }
 }
