@@ -8,7 +8,10 @@ public class GregorandCryptography {
         int t= sc.nextInt();
         while (t-->0){
             int n=sc.nextInt();
-            System.out.println(1+" "+n);
+            if(n%2==0)
+                System.out.println(2+" "+n);
+            else
+                System.out.println(2+" "+(n-1));
         }
     }
 }
