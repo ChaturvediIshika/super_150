@@ -1,27 +1,37 @@
+package Cryptography;
+
 import java.util.Locale;
 import java.util.Scanner;
 
 public class CaesarCipher {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
-        System.out.println("Enter e:encode, d:decode, b:brute force");
-        char ch=sc.next().charAt(0);
+        System.out.println("Enter 1:encode, 2:decode, 3:brute force");
+        int ch=sc.nextInt();
+        sc.nextLine();
         System.out.println("Enter message");
-        String s= sc.next();
+        String s= sc.nextLine();
         switch (ch){
-            case 'e':
+            case 1:
                 System.out.println("Enter shift");
                 int k= sc.nextInt();
                 encrypt(s,k);
                 break;
-            case 'd':
+            case 2:
                 System.out.println("Enter shift");
                 k= sc.nextInt();
                 decrypt(s,k);
                 break;
-            case 'b':
+            case 3:
                 brute(s);
                 break;
+            case 4:
+                k=1;
+                String str="";
+                for(int i=0;i<s.length();i++){
+                    str+=(char)(32+(s.charAt(i)-' '+k)%98);
+                }
+                System.out.println(str);
         }
     }
     public static void encrypt(String s,int shift){
